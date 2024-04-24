@@ -1,0 +1,69 @@
+server:
+  port: 9898
+
+spring:
+  application:
+    name: spring_kafka_example
+
+  # Liquibase
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+    enabled: true
+  # datasource
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_kafka_example?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=true
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  # jpa
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  kafka:
+    consumer:
+      # 消费者组ID
+      group-id: simple_spring_kafka
+      # 开启自动提交offset
+      enable-auto-commit: true
+      # 单次调用poll()操作时能拉取的最大消息数量
+      max-poll-records: 100
+      # 自动提交offset的时间间隔，单位毫秒
+      auto-commit-interval: 5000
+      # 键的反序列化方式
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # 值的反序列化方式
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # 消费者如何对待Kafka中不存在的offset或null的offset
+      auto-offset-reset: earliest # 从最早的消息开始读取
+    listener:
+      # 消费者并发数，即并发消费线程的数量
+      concurrency: 1
+      # poll()调用时的超时时间，单位毫秒
+      poll-timeout: 1500
+    # Kafka集群的地址
+    bootstrap-servers: localhost:9092
+
+# springdoc-openapi 项目配置
+springdoc:
+  # 任何方法中用作请求参数的 POJO（Plain Old Java Objects，简单老式Java对象）都将会被扁平化
+  default-flat-param-object: true
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: order
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.stackstone.example
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+    enable-footer-custom: true

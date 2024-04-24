@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: stackstone
+      changes:
+        - sqlFile:
+            path: ../sql/init.sql
+            # 用于指定引用的文件路径是相对于当前变更日志文件的路径
+            relativeToChangelogFile: true
