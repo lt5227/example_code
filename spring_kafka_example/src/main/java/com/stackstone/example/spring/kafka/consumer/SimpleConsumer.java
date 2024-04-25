@@ -1,4 +1,4 @@
-package com.stackstone.example.spring.kafka.example;
+package com.stackstone.example.spring.kafka.consumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -24,7 +24,7 @@ public class SimpleConsumer {
         log.info("consumer02, count: {}, message: {}", messages.size(), messages);
     }
 
-    @KafkaListener(topics = "test", groupId = "consumer03", batch = "true")
+    @KafkaListener(topics = "test", groupId = "consumer03", batch = "true", autoStartup = "true")
     public void consume03(List<ConsumerRecord<String, String>> records) {
         log.info("consumer03, count: {}, message:{}", records.size(), records);
     }

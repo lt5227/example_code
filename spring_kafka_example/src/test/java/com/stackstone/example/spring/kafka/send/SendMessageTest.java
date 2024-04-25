@@ -14,6 +14,8 @@ public class SendMessageTest {
 
     @Test
     public void sendMessageToKafka() throws Exception {
+        String topic = "dynamic_topic";
+        //String topic = "test"
         Properties properties = new Properties();
         // broker的地址清单，建议至少填写两个，避免宕机
         properties.put("bootstrap.servers", "127.0.0.1:9092");
@@ -34,10 +36,10 @@ public class SendMessageTest {
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         try (Producer<String, String> producer = new KafkaProducer<>(properties)) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 100; i++) {
                 String message = "demo message number" + i;
-                producer.send(new ProducerRecord<>("test", "key" + i, message));
-                Thread.sleep(5);
+                producer.send(new ProducerRecord<>(topic, "key" + i, message));
+                Thread.sleep(1000);
             }
         }
     }

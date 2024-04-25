@@ -15,3 +15,5 @@ CREATE DATABASE IF NOT EXISTS spring_kafka_example CHARACTER SET utf8mb4 COLLATE
 ```
 
 确保数据库连接正确后，由于项目使用了 Liquibase 进行数据库初始化和更新，所以只需要启动项目即可。
+
+项目启动后可以访问 http://localhost:9898/doc.html 访问接口文档

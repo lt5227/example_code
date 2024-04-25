@@ -41,7 +41,7 @@ spring:
       auto-offset-reset: earliest # 从最早的消息开始读取
     listener:
       # 消费者并发数，即并发消费线程的数量
-      concurrency: 1
+      concurrency: 10
       # poll()调用时的超时时间，单位毫秒
       poll-timeout: 1500
     # Kafka集群的地址
