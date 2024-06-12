@@ -1,0 +1,21 @@
+{
+  // "extends" 部分用于继承一系列预定义的规则集或配置。
+  "extends": [
+    // "eslint:recommended": 包含 ESLint 的核心规则集，这些规则可以检测JavaScript代码中的潜在问题。
+    "eslint:recommended",
+    // "plugin:vue/vue3-recommended": 专为 Vue 3 设计的规则集，包含对 Vue 代码风格和最佳实践的严格检查。
+    // 这个规则集适用于 Vue 3 项目，涵盖了 Vue 特定的语法和模式。
+    "plugin:vue/vue3-recommended",
+    // "plugin:prettier/recommended": 这是一个配置集，旨在集成 Prettier 的格式化功能到 ESLint 中。
+    // 它首先使用 "eslint-plugin-prettier" 来运行 Prettier 作为 ESLint 规则，
+    // 然后使用 "eslint-config-prettier" 来禁用所有可能与 Prettier 冲突的 ESLint 规则。
+    "plugin:prettier/recommended"
+  ],
+  // "rules" 部分允许你定义或重写从 "extends" 部分继承来的规则。
+  "rules": {
+    // "prettier/prettier": "error": 配置 Prettier 产生的问题为 ESLint 的 "error" 级别错误。
+    // 这意味着任何代码风格不符合 Prettier 配置的地方都会被 ESLint 标记为错误，
+    // 这样可以在编写代码时即时纠正格式问题。
+    "prettier/prettier": "error"
+  }
+}
