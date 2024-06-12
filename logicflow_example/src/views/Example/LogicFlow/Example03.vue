@@ -8,7 +8,8 @@ import CustomEdge from './component/CustomEdge'
 import '@logicflow/extension/lib/style/index.css'
 import { Control } from '@logicflow/extension'
 
-LogicFlow.use(Control)
+// 注册插件到全局
+// LogicFlow.use(Control)
 
 // 静默模式配置，禁用滚动、移动和缩放等功能
 const SilentConfig = {
@@ -78,7 +79,8 @@ onMounted(() => {
     container: document.getElementById('container')!, // 指定容器元素
     grid: true, // 启用网格
     ...SilentConfig, // 应用静默模式配置
-    ...styleConfig // 应用样式配置
+    ...styleConfig, // 应用样式配置
+    plugins: [Control] // 使用插件 注册插件到实例
   })
   lf.register(CustomEdge)
   // 渲染图表数据
