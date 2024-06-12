@@ -7,8 +7,7 @@ import 'element-plus/dist/index.css'
 <template>
   <div id="app">
     <ElMenu
-    
-      style="height: 100vh; width: 200px"
+      style="height: 100%; width: 200px; min-height: 100vh"
       default-active="1"
       class="el-menu-vertical-demo"
       active-text-color="#ffd04b"

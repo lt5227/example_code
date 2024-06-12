@@ -26,6 +26,11 @@ export const menuItems: MenuItem[] = [
         index: '1-3',
         title: 'Example 3',
         path: '/example/logic_flow/example03'
+      },
+      {
+        index: '1-4',
+        title: 'Example 4',
+        path: '/example/logic_flow/example04'
       }
     ]
   }
