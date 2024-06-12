@@ -4,6 +4,12 @@ import '@logicflow/core/dist/style/index.css'
 import { onMounted } from 'vue'
 import CustomEdge from './component/CustomEdge'
 
+// 使用扩展库
+import '@logicflow/extension/lib/style/index.css'
+import { Control } from '@logicflow/extension'
+
+LogicFlow.use(Control)
+
 // 静默模式配置，禁用滚动、移动和缩放等功能
 const SilentConfig = {
   isSilentMode: true, // 启用静默模式
