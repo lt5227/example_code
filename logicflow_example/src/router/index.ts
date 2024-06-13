@@ -55,6 +55,11 @@ const routes = [
     path: '/example/logic_flow/example11',
     name: 'LogicFlowExample11',
     component: () => import('@/views/Example/LogicFlow/Example11.vue')
+  },
+  {
+    path: '/example/logic_flow/example12',
+    name: 'LogicFlowExample12',
+    component: () => import('@/views/Example/LogicFlow/Example12.vue')
   }
 ]
 
