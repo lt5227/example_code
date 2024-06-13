@@ -30,6 +30,11 @@ const routes = [
     path: '/example/logic_flow/example06',
     name: 'LogicFlowExample06',
     component: () => import('@/views/Example/LogicFlow/Example06.vue')
+  },
+  {
+    path: '/example/logic_flow/example07',
+    name: 'LogicFlowExample07',
+    component: () => import('@/views/Example/LogicFlow/Example07.vue')
   }
 ]
 
