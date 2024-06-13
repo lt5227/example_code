@@ -35,6 +35,26 @@ const routes = [
     path: '/example/logic_flow/example07',
     name: 'LogicFlowExample07',
     component: () => import('@/views/Example/LogicFlow/Example07.vue')
+  },
+  {
+    path: '/example/logic_flow/example08',
+    name: 'LogicFlowExample08',
+    component: () => import('@/views/Example/LogicFlow/Example08.vue')
+  },
+  {
+    path: '/example/logic_flow/example09',
+    name: 'LogicFlowExample09',
+    component: () => import('@/views/Example/LogicFlow/Example09.vue')
+  },
+  {
+    path: '/example/logic_flow/example10',
+    name: 'LogicFlowExample10',
+    component: () => import('@/views/Example/LogicFlow/Example10.vue')
+  },
+  {
+    path: '/example/logic_flow/example11',
+    name: 'LogicFlowExample11',
+    component: () => import('@/views/Example/LogicFlow/Example11.vue')
   }
 ]
 
