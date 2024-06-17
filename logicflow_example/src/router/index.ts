@@ -1,3 +1,4 @@
+import path from 'path'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -80,6 +81,11 @@ const routes = [
     path: '/example/logic_flow_advance/node_example03',
     name: 'LogicFlowAdvanceNodeExample03',
     component: () => import('@/views/Example/LogicFlowAdvance/NodeExample/Example03.vue')
+  },
+  {
+    path: '/example/logic_flow_advance/edge_example01',
+    name: 'LogicFlowAdvanceEdgeExample01',
+    component: () => import('@/views/Example/LogicFlowAdvance/Edge/Example01/Example01.vue')
   }
 ]
 

@@ -109,6 +109,17 @@ export const menuItems: MenuItem[] = [
                 path: '/example/logic_flow_advance/node_example03'
               }
             ]
+          },
+          {
+            index: '2-2',
+            title: '边',
+            children: [
+              {
+                index: '2-2-1',
+                title: 'Example01',
+                path: '/example/logic_flow_advance/edge_example01'
+              }
+            ]
           }
         ]
       }

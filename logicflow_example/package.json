@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@logicflow/core": "^1.2.27",
     "@logicflow/extension": "^1.2.27",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
     "element-plus": "^2.7.5",
     "vue": "^3.4.21",
     "vue-router": "4"
