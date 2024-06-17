@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { ElMenu, ElMenuItem, ElSubMenu } from 'element-plus'
+import { ElMenu } from 'element-plus'
 import { menuItems } from './config'
 import 'element-plus/dist/index.css'
+import RecursiveMenu from './RecursiveMenu.vue'
 </script>
 
 <template>
   <div id="app">
     <ElMenu
-      style="height: 100%; width: 200px; min-height: 100vh"
+      style="height: 100%; width: auto; max-width: 250px; min-height: 100vh"
       default-active="1"
       class="el-menu-vertical-demo"
       active-text-color="#ffd04b"
@@ -15,38 +16,7 @@ import 'element-plus/dist/index.css'
       text-color="#fff"
       router
     >
-      <!-- 使用 v-for 和 v-if/v-else 分别处理有子菜单和无子菜单的情况 -->
-      <template v-for="item in menuItems">
-        <!-- 当存在子菜单时，使用 ElSubMenu -->
-        <ElSubMenu
-          v-if="item.children"
-          :key="'submenu-' + item.index"
-          :index="item.index"
-        >
-          <template #title>
-            <i v-if="item.icon" :class="item.icon" style="margin-right: 10px" />
-            <span>{{ item.title }}</span>
-          </template>
-          <ElMenuItem
-            v-for="child in item.children"
-            :key="child.index"
-            :index="child.index"
-            :route="child.path"
-          >
-            {{ child.title }}
-          </ElMenuItem>
-        </ElSubMenu>
-        <!-- 没有子菜单时，直接显示 ElMenuItem -->
-        <ElMenuItem
-          v-else
-          :key="'menuitem-' + item.index"
-          :index="item.index"
-          :route="item.path"
-        >
-          <i v-if="item.icon" :class="item.icon" style="margin-right: 10px" />
-          <span>{{ item.title }}</span>
-        </ElMenuItem>
-      </template>
+      <RecursiveMenu v-for="item in menuItems" :key="item.index" :item="item" />
     </ElMenu>
     <div class="main-content">
       <RouterView />
