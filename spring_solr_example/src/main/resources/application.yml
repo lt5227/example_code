@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring_solr_example
+  datasource:
+    url: jdbc:mysql://localhost:3306/movies
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 9111
+
+
